@@ -28,7 +28,7 @@ elif [[ "$Choice" == "PBS" ]]
     module load Analysis/root/6.24.06
 elif [[ "$Choice" == "CERN" ]] 
   then
-    echo "PBS"
+    echo "CERN"
 
 fi
 
