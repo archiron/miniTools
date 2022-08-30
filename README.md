@@ -9,6 +9,8 @@ input_ref_file : ROOT file name, used for the comparison with the input_rel_file
 histoName : name of the histo to be generated
 
 dataPath : path to be used where the previous ROOT file are located. A DATA folder is given to set locally those ROOT files.
+The data
+The path MUST be with full path (not with ../).
 
 miniExtractHisto.py
 ####
