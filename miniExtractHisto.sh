@@ -32,6 +32,6 @@ elif [[ "$Choice" == "CERN" ]]
 
 fi
 
-python miniExtractHisto.py $1
+python miniExtractHisto.py
 
 echo 'END'
