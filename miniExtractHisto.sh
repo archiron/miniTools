@@ -19,6 +19,7 @@ echo "Choice is : $Choice"
 if [[ "$Choice" == "LLR" ]] 
   then
     echo "LLR"
+    source /opt/exp_soft/llr/root/v6.24.04-el7-gcc9xx-py370/etc/init.sh
 elif [[ "$Choice" == "PBS" ]] 
   then
     echo "PBS"
