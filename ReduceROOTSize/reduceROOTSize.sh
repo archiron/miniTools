@@ -6,15 +6,19 @@
 a=()
 
 PATH_INIT=$PWD
-chemin='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/DATA/'
+localPath='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/DATA/'
 
-cd $chemin # 
+cd $localPath # 
 # get the releases list
 a=`find . -type f | grep root `
 for name in ${a[@]}
 do
-  echo $name
-  python3 $PATH_INIT/reduceSize1File.py $name
+  FILESIZE=$(stat -c%s "$name")
+  echo $name $FILESIZE
+  if [ $FILESIZE -ge 200000 ]
+  then
+    python3 $PATH_INIT/reduceSize1File.py $name
+  fi
 done
 
 cd $PATH_INIT

@@ -22,3 +22,6 @@ miniExtractHisto.sh<br>
 ++++<br>
 sh script used to launch the computation. 
 With it the histogram can be generated onto lxplus, cca or LLR workers.
+
+One can use the ReduceRootSize folder by modifiyng the localPath variable and launch : . reduceRootSize.sh
+git clone https://github.com/archiron/miniTools/ miniTools
