@@ -15,9 +15,11 @@ for name in ${a[@]}
 do
   FILESIZE=$(stat -c%s "$name")
   echo $name $FILESIZE
-  if [ $FILESIZE -ge 200000 ]
+  if [ $FILESIZE -ge 2500000 ]
   then
     python3 $PATH_INIT/reduceSize1File.py $name
+  else
+    echo "size too small"
   fi
 done
 
