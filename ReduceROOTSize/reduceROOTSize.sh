@@ -6,7 +6,28 @@
 a=()
 
 PATH_INIT=$PWD
-localPath='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/DATA/'
+localPath='/pbs/home/c/chiron//public/ValidationsTools_12_1_0_pre5/DATA'
+for SUB in 'llr' 'pbs'
+do
+  if [[ "$PATH_INIT" == *"$SUB"* ]]; then
+    echo "It's $SUB there.";
+    Choice=${SUB^^};
+  fi
+done
+
+if [[ "$Choice" == "LLR" ]] 
+  then
+    echo "LLR"
+    source /opt/exp_soft/llr/root/v6.24.04-el7-gcc9xx-py370/etc/init.sh
+elif [[ "$Choice" == "PBS" ]] 
+  then
+    echo "PBS"
+    module purge
+    module load Programming_Languages/python/3.9.1
+    module load Compilers/gcc/9.3.1
+    module load DataManagement/xrootd/4.8.1
+    module load Analysis/root/6.24.06
+fi
 
 cd $localPath # 
 # get the releases list
