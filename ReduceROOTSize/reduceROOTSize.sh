@@ -6,7 +6,9 @@
 a=()
 
 PATH_INIT=$PWD
-localPath='/pbs/home/c/chiron//public/ValidationsTools_12_1_0_pre5/DATA'
+localPath='/sps/cms/chiron/REGENERATION/ZpToEE'
+sName='DQM_V' # degin of the name
+
 for SUB in 'llr' 'pbs'
 do
   if [[ "$PATH_INIT" == *"$SUB"* ]]; then
@@ -34,13 +36,15 @@ cd $localPath #
 a=`find . -type f | grep root `
 for name in ${a[@]}
 do
-  FILESIZE=$(stat -c%s "$name")
-  echo $name $FILESIZE
-  if [ $FILESIZE -ge 2500000 ]
-  then
-    python3 $PATH_INIT/reduceSize1File.py $name
-  else
-    echo "size too small"
+  if [[ "$name" == *"$sName"* ]]; then # test with the begin of the name
+    FILESIZE=$(stat -c%s "$name")
+    echo $name $FILESIZE
+    if [ $FILESIZE -ge 2500000 ] # test with file size
+    then
+      python3 $PATH_INIT/reduceSize1File.py $name
+    else
+      echo "size too small"
+    fi
   fi
 done
 
