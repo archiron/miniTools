@@ -7,7 +7,11 @@ a=()
 
 PATH_INIT=$PWD
 localPath='/sps/cms/chiron/REGENERATION/ZpToEE'
+localPath='/eos/home-a/archiron/HGCal_Shares'
+localPath='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/DATA'
 sName='DQM_V' # degin of the name
+sName='step'
+sName='DQMIO'
 
 for SUB in 'llr' 'pbs'
 do
