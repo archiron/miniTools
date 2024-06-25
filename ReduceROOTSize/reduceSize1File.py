@@ -24,7 +24,7 @@ import ROOT
 ROOT.gROOT.SetBatch(True)
 argv.remove( '-b-' )
 
-from ROOT import *
+from ROOT import TFile
 
 sys.path.append('../ChiLib')
 
