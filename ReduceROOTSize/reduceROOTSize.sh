@@ -6,8 +6,19 @@
 a=()
 
 PATH_INIT=$PWD
-localPath='/sps/cms/chiron/REGENERATION/ZpToEE'
+#localPath='/sps/cms/chiron/REGENERATION/ZpToEE'
+#localPath='/eos/home-a/archiron/HGCal_Shares'
+localPath='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/DATA'
+#localPath='/home/arnaud/cernbox/TEST_GITCLONE/quickValidationsNG/DATA'
+#localPath='/eos/home-a/archiron/OLD_THINGS/AllSteps/Stockage'
+#localPath='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/Tests'
+echo "working on $localPath"
+
 sName='DQM_V' # degin of the name
+#sName='step'
+#sName='DQMIO'
+
+extension='root'
 
 for SUB in 'llr' 'pbs'
 do
@@ -33,7 +44,7 @@ fi
 
 cd $localPath # 
 # get the releases list
-a=`find . -type f | grep root `
+a=`find . -type f | grep $extension `
 for name in ${a[@]}
 do
   if [[ "$name" == *"$sName"* ]]; then # test with the begin of the name
