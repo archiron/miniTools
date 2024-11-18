@@ -19,7 +19,7 @@ echo "Choice is : $Choice"
 if [[ "$Choice" == "LLR" ]] 
   then
     echo "LLR"
-    source /opt/exp_soft/llr/root/v6.24.04-el7-gcc9xx-py370/etc/init.sh
+    source /opt/exp_soft/llr/root/v6.32-el9-gcc13xx-py3124/etc/init.sh
 elif [[ "$Choice" == "PBS" ]] 
   then
     echo "PBS"
@@ -33,6 +33,6 @@ elif [[ "$Choice" == "CERN" ]]
 
 fi
 
-python miniExtractHisto.py
+python3 miniExtractHisto.py
 
 echo 'END'

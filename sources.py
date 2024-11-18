@@ -12,10 +12,10 @@
 ################################################################################
 
 # get the "new" root file datas
-input_rel_file = 'DQM_V0001_R000000001__RelValZEE_14__CMSSW_11_1_0_pre4-110X_mcRun3_2021_realistic_v8-v1__DQMIO.root'
+input_rel_file = 'DQM_V0001_R000000001__RelValZEE_14__CMSSW_14_1_0_pre6-140X_mcRun3_2024_realistic_v11_RegeneratedGS_2024_noPU-v1__DQMIO.root'
 
 # get the "reference" root file datas
-input_ref_file = 'DQM_V0001_R000000001__RelValZEE_14__CMSSW_11_1_0_pre3-110X_mcRun3_2021_realistic_v8-v1__DQMIO.root'
+input_ref_file = 'DQM_V0002_R000000001__RelValZEE_14__CMSSW_14_1_0_pre5-140X_mcRun3_2024_realistic_v11_RegeneratedGS_2024_noPU-v1__DQMIO.root'
 #print('we use the %d file as reference' % ind_ref_file)
 #print('we use : %s file as reference' % input_ref_file)
 

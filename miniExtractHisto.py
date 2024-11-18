@@ -18,7 +18,7 @@ import ROOT
 ROOT.gROOT.SetBatch(True)
 argv.remove( '-b-' )
 
-from ROOT import *
+from ROOT import TPad, TCanvas, gPad, gStyle, kBlue, kRed, kBlack
 from sources import *
 
 # these line for daltonians !
