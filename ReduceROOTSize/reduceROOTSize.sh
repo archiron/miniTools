@@ -8,13 +8,14 @@ a=()
 PATH_INIT=$PWD
 #localPath='/sps/cms/chiron/REGENERATION/ZpToEE'
 #localPath='/eos/home-a/archiron/HGCal_Shares'
-localPath='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/DATA'
+#localPath='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/DATA'
 #localPath='/home/arnaud/cernbox/TEST_GITCLONE/quickValidationsNG/DATA'
 #localPath='/eos/home-a/archiron/OLD_THINGS/AllSteps/Stockage'
 #localPath='/eos/home-a/archiron/TEST_GITCLONE/quickValidationsNG/Tests'
+localPath='/data_CMS/cms/chiron/ROOT_Files/CMSSW_14_1_0'
 echo "working on $localPath"
 
-sName='DQM_V' # degin of the name
+sName='DQM_V' # beginning of the name
 #sName='step'
 #sName='DQMIO'
 
@@ -31,15 +32,8 @@ done
 if [[ "$Choice" == "LLR" ]] 
   then
     echo "LLR"
-    source /opt/exp_soft/llr/root/v6.24.04-el7-gcc9xx-py370/etc/init.sh
-elif [[ "$Choice" == "PBS" ]] 
-  then
-    echo "PBS"
-    module purge
-    module load Programming_Languages/python/3.9.1
-    module load Compilers/gcc/9.3.1
-    module load DataManagement/xrootd/4.8.1
-    module load Analysis/root/6.24.06
+    #source /opt/exp_soft/llr/root/v6.24.04-el7-gcc9xx-py370/etc/init.sh
+    source /opt/exp_soft/llr/root/v6.32-el9-gcc13xx-py3124/etc/init.sh
 fi
 
 cd $localPath # 

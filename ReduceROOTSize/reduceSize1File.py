@@ -43,7 +43,7 @@ def changeDirectory(rootFile, path):
 
 def checkLevel(f_rel, f_out, path0, listkeys, nb, inPath):
     #inPath = 'DQMData/Run 1/Info'
-    print('\npath : %s' % path0)
+    #print('\npath : %s' % path0)
     if path0 != "":
         path0 += '/'
     
@@ -52,7 +52,7 @@ def checkLevel(f_rel, f_out, path0, listkeys, nb, inPath):
         if (elem.GetClassName() == "TDirectoryFile"):
             path = path0 + elem.GetName()
             if (nb >= 3 and re.search(inPath, path)):
-                print('\npath : %s' % path)
+                #print('\npath : %s' % path)
                 f_out.mkdir(path)
             tmp = f_rel.Get(path).GetListOfKeys()
             checkLevel(f_rel, f_out, path, tmp, nb+1, inPath)
@@ -72,20 +72,21 @@ def checkLevel(f_rel, f_out, path0, listkeys, nb, inPath):
                 elem.ReadObj().Write()
 
 if len(sys.argv) > 1:
-    print(sys.argv)
-    print("step 1 - arg. 0 :", sys.argv[0]) # name of the script
-    print("step 1 - arg. 1 :", sys.argv[1]) # name of the ROOT file
+    aa = 1
+    #print(sys.argv)
+    #print("step 1 - arg. 0 :", sys.argv[0]) # name of the script
+    #print("step 1 - arg. 1 :", sys.argv[1]) # name of the ROOT file
 else:
     print("step 1 - rien")
 
-print("func_ReduceSize")
+#print("func_ReduceSize")
 input_file = sys.argv[1] # '/DQM_V0001_R000000001__Global__CMSSW_X_Y_Z__RECO_' + '.root'
 #input_file = input_file.replace('./', '/')
 racine = input_file.split('.root')
 output_file = racine[0] + 'b.root' # + racine[1]
 
-print('\n %s' % input_file)
-print('\n %s' % output_file)
+print('%s' % input_file)
+print('%s' % output_file)
 
 paths = ['DQMData/Run 1/EgammaV', 'DQMData/Run 1/Info']
 
@@ -100,12 +101,12 @@ f_out.Close()
 f_rel.Close()
 
 tmp_file = './tmp' + '.root'
-print('\n %s' % tmp_file)
-print('move input_file to tmp_file')
+#print('\n %s' % tmp_file)
+#print('move input_file to tmp_file')
 os.rename(input_file, tmp_file) # mv input_file -> tmp_file
-print('move output_file to input_file')
+#print('move output_file to input_file')
 os.rename(output_file, input_file) # mv output_file -> input_file
-print('delete tmp_file')
+#print('delete tmp_file')
 os.remove(tmp_file) # remove input_file
 
 print("Fin !")
