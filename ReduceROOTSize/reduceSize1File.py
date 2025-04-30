@@ -85,8 +85,8 @@ input_file = sys.argv[1] # '/DQM_V0001_R000000001__Global__CMSSW_X_Y_Z__RECO_' +
 racine = input_file.split('.root')
 output_file = racine[0] + 'b.root' # + racine[1]
 
-print('%s' % input_file)
-print('%s' % output_file)
+#print('%s' % input_file)
+#print('%s' % output_file)
 
 paths = ['DQMData/Run 1/EgammaV', 'DQMData/Run 1/Info']
 
