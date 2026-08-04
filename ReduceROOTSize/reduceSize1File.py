@@ -117,7 +117,7 @@ output_file = racine[0] + 'b.root' # + racine[1]
 #print('\n %s' % input_file)
 #print('\n %s' % output_file)
 print('\n {:s}'.format(colorText(input_file, 'b_red')))
-print('\n {:s}'.format(colorText(output_file, 'b_red')))
+print('{:s}\n'.format(colorText(output_file, 'b_red')))
 
 paths = ['DQMData/Run 1/EgammaV', 'DQMData/Run 1/Info']
 
